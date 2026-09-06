@@ -172,8 +172,8 @@ void TMushroom1up::control()
 	} else {
 		angle = 180.0f - 0.005493164f * (f32)matan(diff.x, -diff.z);
 	}
-	f32 wrapped = callMsWrap(angle, angle - 180.0f, angle + 180.0f);
-	f32 delta   = wrapped - mRotation.y;
+	f32 wrapped = callMsWrap(mRotation.y, angle - 180.0f, angle + 180.0f);
+	f32 delta   = angle - wrapped;
 	f32 clamped;
 	if (delta > 0.0f) {
 		clamped = (delta > 1.0f) ? 1.0f : delta;
