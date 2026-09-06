@@ -161,17 +161,7 @@ void TMushroom1up::control()
 		diff.y = -diff.y;
 		diff.z = -diff.z;
 	}
-	f32 angle;
-	if (diff.z == 0.0f) {
-		if (diff.x > 0.0f)
-			angle = 90.0f;
-		else
-			angle = -90.0f;
-	} else if (diff.z > 0.0f) {
-		angle = 0.005493164f * (f32)matan(diff.x, diff.z);
-	} else {
-		angle = 180.0f - 0.005493164f * (f32)matan(diff.x, -diff.z);
-	}
+	f32 angle = MsGetRotFromZaxisY(diff);
 	f32 wrapped = callMsWrap(mRotation.y, angle - 180.0f, angle + 180.0f);
 	f32 delta   = angle - wrapped;
 	f32 clamped;
