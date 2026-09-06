@@ -967,7 +967,7 @@ void TBathtub::setupCollisions_()
 		f32 rot = (((f32)(index + 1) * 6.2831855f) / 30.0f) - 3.1415927f;
 		TPosition3f transform;
 		transform.setEularY(rot);
-		transform.setTrans(0.0f, 1.0f, 0.0f);
+		transform.zeroTrans();
 		TPosition3f mtx;
 		mtx.concat(*(const TSMtx34f*)getModel()->getBaseTRMtx(), transform);
 

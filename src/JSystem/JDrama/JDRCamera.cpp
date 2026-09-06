@@ -29,24 +29,27 @@ void TPolarCamera::perform(u32 param_1, TGraphics* param_2)
 	param_2->mNearPlane = mNear;
 	param_2->mFarPlane  = mFar;
 
-	TRotation3f rotZ1;
+	TPosition3f rotZ1;
 	rotZ1.setEularZ(DEG_TO_RAD(-unk40));
+	rotZ1.zeroTrans();
 
 	TPosition3f trans;
 	trans.translation(0.0f, 0.0f, -unk44);
 
 	TMtx34f mtx1;
-	mtx1.concat(rotZ1, trans);
+	mtx1.concat(trans, rotZ1);
 
-	TRotation3f rotY1;
-	rotY1.setEularY(DEG_TO_RAD(-unk3C));
+	TPosition3f rotX;
+	rotX.setEularX(DEG_TO_RAD(-unk3C));
+	rotX.zeroTrans();
 	TMtx34f mtx2;
-	mtx2.concat(rotY1, mtx1);
+	mtx2.concat(mtx1, rotX);
 
-	TRotation3f rotY2;
-	rotY2.setEularY(DEG_TO_RAD(unk38));
+	TPosition3f rotZ2;
+	rotZ2.setEularZ(DEG_TO_RAD(unk38));
+	rotZ2.zeroTrans();
 	TMtx34f mtx3;
-	mtx3.concat(rotY2, mtx2);
+	mtx3.concat(mtx2, rotZ2);
 
 	PSMTXCopy(mtx3, param_2->mViewMtx.mMtx);
 
