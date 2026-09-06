@@ -717,10 +717,9 @@ BOOL TKoopaJrSubmarine::receiveMessage(THitActor* sender, u32 message)
 
 void TKoopaJrSubmarine::calcRootMatrix()
 {
-	J3DModel* model = getModel();
 	if (unk1A0->unk15C->getUnk29A()) {
 		MtxPtr mtx = unk1A0->unk15C->getSubmarineMtxInDemo();
-		PSMTXCopy(mtx, model->getBaseTRMtx());
+		PSMTXCopy(mtx, getModel()->getBaseTRMtx());
 	} else {
 		f32 swingHalf = 0.5f * (unk190 * sinf(unk194));
 		f32 swingSin  = sinf(swingHalf);
@@ -760,10 +759,10 @@ void TKoopaJrSubmarine::calcRootMatrix()
 		mtx.setTrans(origin);
 		mtx.concat(centerMtx);
 
-		PSMTXCopy(mtx.mMtx, model->getBaseTRMtx());
+		PSMTXCopy(mtx.mMtx, getModel()->getBaseTRMtx());
 	}
 
-	model->setBaseScale(mScaling);
+	getModel()->setBaseScale(mScaling);
 }
 
 void TKoopaJrSubmarine::checkNerve()
