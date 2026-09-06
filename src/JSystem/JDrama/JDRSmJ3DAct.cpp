@@ -32,7 +32,7 @@ void TSmJ3DAct::perform(u32 param_1, TGraphics* param_2)
 	if (param_1 & 2) {
 		TPosition3f mtx;
 		mtx.identity();
-		mtx.setTrans(mPosition.x, mPosition.y, mPosition.z);
+		mtx.setTrans(mPosition);
 
 		TPosition3f rot;
 		rot.setEularZ(DEG_TO_RAD(mRotation.z));
