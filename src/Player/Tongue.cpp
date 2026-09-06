@@ -105,15 +105,15 @@ void TYoshiTongue::calcAnim(MtxPtr p)
 
 	Mtx tipMtx;
 	tipMtx[0][0] = side.x;
-	tipMtx[0][1] = side.y;
-	tipMtx[0][2] = side.z;
+	tipMtx[0][1] = up.x;
+	tipMtx[0][2] = dir.x;
 	tipMtx[0][3] = tipPos.x;
-	tipMtx[1][0] = up.x;
+	tipMtx[1][0] = side.y;
 	tipMtx[1][1] = up.y;
-	tipMtx[1][2] = up.z;
+	tipMtx[1][2] = dir.y;
 	tipMtx[1][3] = tipPos.y;
-	tipMtx[2][0] = dir.x;
-	tipMtx[2][1] = dir.y;
+	tipMtx[2][0] = side.z;
+	tipMtx[2][1] = up.z;
 	tipMtx[2][2] = dir.z;
 	tipMtx[2][3] = tipPos.z;
 	PSMTXCopy(tipMtx, mTipModel->unk20);
