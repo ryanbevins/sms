@@ -868,11 +868,12 @@ void TGorogoro::behaveToWater(THitActor*)
 		f32 attackRadius = getSaveParam2()->getSLAttackRadius();
 		f32 attackHeight = getSaveParam2()->getSLAttackHeight();
 		f32 damageRadius = getSaveParam2()->getSLDamageRadius();
+		f32 damageHeight = getSaveParam2()->getSLDamageHeight();
 		f32 ratio        = mBodyScale / unk154;
 		mAttackRadius    = attackRadius * ratio;
 		mAttackHeight    = attackHeight * ratio;
 		mDamageRadius    = damageRadius * ratio;
-		mDamageHeight    = getSaveParam2()->getSLDamageHeight() * ratio;
+		mDamageHeight    = damageHeight * ratio;
 		calcEntryRadius();
 	}
 
