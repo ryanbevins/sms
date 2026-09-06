@@ -148,10 +148,9 @@ void TMushroom1up::control()
 			mState = 1;
 		}
 	}
-	JGeometry::TVec3<f32> diff;
-	diff.x = gpMarioPos->x - mPosition.x;
+	JGeometry::TVec3<f32> diff = *gpMarioPos;
+	diff -= mPosition;
 	diff.y = 0.0f;
-	diff.z = gpMarioPos->z - mPosition.z;
 	f32 distSq = diff.x * diff.x + diff.y * diff.y + diff.z * diff.z;
 	if (distSq <= 0.0000038146973f) {
 		diff.x = 1.0f;
