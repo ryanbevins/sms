@@ -878,8 +878,6 @@ void TGorogoro::behaveToWater(THitActor*)
 	}
 
 	u8 maxHp = getMaxHitPoints();
-	if (maxHp == 0)
-		maxHp = 1;
 
 	unk1ED[3] = mHitPoints * 0xff / maxHp;
 	if (mHitPoints < 2)
