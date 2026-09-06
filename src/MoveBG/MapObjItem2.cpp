@@ -127,19 +127,15 @@ void TMushroom1up::control()
 		pos.z += 1.5f * (50.0f * JMASSin(angle));
 		mPosition = pos;
 		mScaling.set(1.5f, 1.5f, 1.5f);
-		mVelocity.zero();
 		mLinearVelocity.zero();
+		mVelocity.zero();
 		mTimer += 1;
 		return;
 	} else {
 		mTimer += 1;
 		if (mType == 2) {
-			mVelocity.x       = 0.0f;
-			mVelocity.y       = 0.0f;
-			mVelocity.z       = 0.0f;
-			mLinearVelocity.x = 0.0f;
-			mLinearVelocity.y = 0.0f;
-			mLinearVelocity.z = 0.0f;
+			mLinearVelocity.zero();
+			mVelocity.zero();
 			return;
 		}
 		if (mState == 0) {
